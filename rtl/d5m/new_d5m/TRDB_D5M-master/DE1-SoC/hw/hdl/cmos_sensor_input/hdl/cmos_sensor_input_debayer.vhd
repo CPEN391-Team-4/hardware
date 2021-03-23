@@ -57,9 +57,9 @@ begin
                 clk_en => valid_in,
                 clock => clk,
                 shiftin => data_in,
-                shiftout => open;
-                taps0x => mdata_1;
-                taps1x => mdata_0;
+                shiftout => open,
+                taps0x => mdata_1,
+                taps1x => mdata_0
             );
 
     lumen <= mR + mB + mG(PIX_DEPTH_RAW downto 1);
