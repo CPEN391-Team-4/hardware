@@ -42,10 +42,12 @@ USE altera_mf.all;
 ENTITY line_buffer IS
 	PORT
 	(
+		clken		: IN STD_LOGIC  := '1';
 		clock		: IN STD_LOGIC ;
 		shiftin		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
 		shiftout		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
-		taps		: OUT STD_LOGIC_VECTOR (23 DOWNTO 0)
+		taps0x		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
+		taps1x		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0)
 	);
 END line_buffer;
 
@@ -54,6 +56,8 @@ ARCHITECTURE SYN OF line_buffer IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (11 DOWNTO 0);
 	SIGNAL sub_wire1	: STD_LOGIC_VECTOR (23 DOWNTO 0);
+	SIGNAL sub_wire2	: STD_LOGIC_VECTOR (11 DOWNTO 0);
+	SIGNAL sub_wire3	: STD_LOGIC_VECTOR (23 DOWNTO 12);
 
 
 
@@ -67,6 +71,7 @@ ARCHITECTURE SYN OF line_buffer IS
 		width		: NATURAL
 	);
 	PORT (
+			clken	: IN STD_LOGIC ;
 			clock	: IN STD_LOGIC ;
 			shiftin	: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
 			shiftout	: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
@@ -76,7 +81,10 @@ ARCHITECTURE SYN OF line_buffer IS
 
 BEGIN
 	shiftout    <= sub_wire0(11 DOWNTO 0);
-	taps    <= sub_wire1(23 DOWNTO 0);
+	sub_wire3    <= sub_wire1(23 DOWNTO 12);
+	sub_wire2    <= sub_wire1(11 DOWNTO 0);
+	taps0x    <= sub_wire2(11 DOWNTO 0);
+	taps1x    <= sub_wire3(23 DOWNTO 12);
 
 	ALTSHIFT_TAPS_component : ALTSHIFT_TAPS
 	GENERIC MAP (
@@ -88,6 +96,7 @@ BEGIN
 		width => 12
 	)
 	PORT MAP (
+		clken => clken,
 		clock => clock,
 		shiftin => shiftin,
 		shiftout => sub_wire0,
@@ -102,32 +111,36 @@ END SYN;
 -- CNX file retrieval info
 -- ============================================================
 -- Retrieval info: PRIVATE: ACLR NUMERIC "0"
--- Retrieval info: PRIVATE: CLKEN NUMERIC "0"
--- Retrieval info: PRIVATE: GROUP_TAPS NUMERIC "0"
+-- Retrieval info: PRIVATE: CLKEN NUMERIC "1"
+-- Retrieval info: PRIVATE: GROUP_TAPS NUMERIC "1"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 -- Retrieval info: PRIVATE: NUMBER_OF_TAPS NUMERIC "2"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "1"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
--- Retrieval info: PRIVATE: TAP_DISTANCE NUMERIC "256"
+-- Retrieval info: PRIVATE: TAP_DISTANCE NUMERIC "1280"
 -- Retrieval info: PRIVATE: WIDTH NUMERIC "12"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "RAM_BLOCK_TYPE=M10K"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altshift_taps"
 -- Retrieval info: CONSTANT: NUMBER_OF_TAPS NUMERIC "2"
--- Retrieval info: CONSTANT: TAP_DISTANCE NUMERIC "256"
+-- Retrieval info: CONSTANT: TAP_DISTANCE NUMERIC "1280"
 -- Retrieval info: CONSTANT: WIDTH NUMERIC "12"
+-- Retrieval info: USED_PORT: clken 0 0 0 0 INPUT VCC "clken"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 -- Retrieval info: USED_PORT: shiftin 0 0 12 0 INPUT NODEFVAL "shiftin[11..0]"
 -- Retrieval info: USED_PORT: shiftout 0 0 12 0 OUTPUT NODEFVAL "shiftout[11..0]"
--- Retrieval info: USED_PORT: taps 0 0 24 0 OUTPUT NODEFVAL "taps[23..0]"
+-- Retrieval info: USED_PORT: taps0x 0 0 12 0 OUTPUT NODEFVAL "taps0x[11..0]"
+-- Retrieval info: USED_PORT: taps1x 0 0 12 0 OUTPUT NODEFVAL "taps1x[11..0]"
+-- Retrieval info: CONNECT: @clken 0 0 0 0 clken 0 0 0 0
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: @shiftin 0 0 12 0 shiftin 0 0 12 0
 -- Retrieval info: CONNECT: shiftout 0 0 12 0 @shiftout 0 0 12 0
--- Retrieval info: CONNECT: taps 0 0 24 0 @taps 0 0 24 0
+-- Retrieval info: CONNECT: taps0x 0 0 12 0 @taps 0 0 12 0
+-- Retrieval info: CONNECT: taps1x 0 0 12 0 @taps 0 0 12 12
 -- Retrieval info: GEN_FILE: TYPE_NORMAL line_buffer.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL line_buffer.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL line_buffer.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL line_buffer.cmp FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL line_buffer.bsf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL line_buffer_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf
