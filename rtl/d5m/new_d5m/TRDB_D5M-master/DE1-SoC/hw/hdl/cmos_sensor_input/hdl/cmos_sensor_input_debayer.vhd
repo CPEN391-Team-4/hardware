@@ -1,11 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_arith.all;
-use ieee.numeric_bit.all;
-use ieee.numeric_std.all;
-use ieee.std_logic_signed.all;
-use ieee.std_logic_unsigned.all;
 
 use work.cmos_sensor_input_constants.all;
 
@@ -39,14 +34,13 @@ end entity cmos_sensor_input_debayer;
 
 architecture rtl of cmos_sensor_input_debayer is
 
-    variable x_cont : std_logic_vector(PIX_DEPTH_RAW - 2 downto 0);
-    variable y_cont : std_logic_vector(PIX_DEPTH_RAW - 2 downto 0);
+    constant column_width : unsigned(10 downto 0) := to_unsigned(1280, 11);
+	 constant zero11bit : unsigned(10 downto 0) := to_unsigned(0, 11);
 
-    const column_width : positive := 1280;
-
-    signal mdata_0, mdata_1, mdatad_0, mdatad_1, mR, mB : std_logic_vector(PIX_DEPTH_RAW - 1 downto 0);
-    signal lumen                                        : std_logic_vector(PIX_DEPTH_RAW + 1 downto 0);
-    signal mG                                           : std_logic_vector(PIX_DEPTH_RAW downto 0);
+    signal mdata_0, mdata_1									  : std_logic_vector(PIX_DEPTH_RAW - 1 downto 0);
+	 signal udata_0, udata_1, udatad_0, udatad_1, uR, uB : unsigned(PIX_DEPTH_RAW - 1 downto 0);
+    signal lumen                                        : unsigned(PIX_DEPTH_RAW + 1 downto 0);
+	 signal uG                                           : unsigned(PIX_DEPTH_RAW downto 0);
     signal dval                                         : std_logic;
 
 begin
@@ -54,7 +48,7 @@ begin
     -- line_buffer instantiation
     lbuf  : entity work.line_buffer(SYN)
             port map (
-                clk_en => valid_in,
+                clken => valid_in,
                 clock => clk,
                 shiftin => data_in,
                 shiftout => open,
@@ -62,45 +56,52 @@ begin
                 taps1x => mdata_0
             );
 
-    lumen <= mR + mB + mG(PIX_DEPTH_RAW downto 1);
-    data_out <= lumen(PIX_DEPTH_RAW + 1 downto PIX_DEPTH_RAW - PIX_DEPTH_RGB + 2);
+	 lumen <= uR + uB + uG(PIX_DEPTH_RAW downto 1);
+    data_out <= std_logic_vector(lumen(PIX_DEPTH_RAW + 1 downto PIX_DEPTH_RAW - PIX_DEPTH_RGB + 2));
     end_of_frame_out <= end_of_frame_in;    -- Check if this works correctly
+	 udata_0 <= unsigned(mdata_0);
+	 udata_1 <= unsigned(mdata_1);
+	 
 
     process (clk, reset)
+	 
+	 variable xcont : unsigned(10 downto 0);
+    variable ycont : unsigned(10 downto 0);
+	 
     begin
         if reset = '1' then
-            mR                  <= '0';
-            mG                  <= '0';
-            mB                  <= '0';
-            mdatad_0            <= '0';
-            mdatad_1            <= '0';
+            uR                  <= to_unsigned(0, PIX_DEPTH_RAW);
+            uG                  <= to_unsigned(0, PIX_DEPTH_RAW);
+            uB                  <= to_unsigned(0, PIX_DEPTH_RAW);
+            udatad_0            <= to_unsigned(0, PIX_DEPTH_RAW);
+            udatad_1            <= to_unsigned(0, PIX_DEPTH_RAW);
             dval                <= '0';
             start_of_frame_out  <= '0';
             end_of_frame_out    <= '0';
 
-            xcont               := '0';
-            ycont               := '0';
+            xcont               := to_unsigned(0, 11);
+            ycont               := to_unsigned(0, 11);
 
         elsif rising_edge(clk) then
             -- x,y frame coordinate counter
             if valid_in = '1' then
-                if xcont < column_width - '1' then
-                    xcont <= xcont + '1';
+                if xcont < column_width - to_unsigned(1, 11) then
+                    xcont := xcont + to_unsigned(1, 11);
                 else
-                    xcont <= '0';
-                    ycont <= ycont + '1';
+                    xcont := to_unsigned(0, 11);
+                    ycont := ycont + to_unsigned(1, 11);
                 end if;
             end if;
 
             -- check if start of frame
-            if xcont = '1' and ycont = '1' then
+            if xcont = to_unsigned(1, 11) and ycont = to_unsigned(1, 11) then
                 start_of_frame_out <= '1';
             else
                 start_of_frame_out <= '0';
             end if;
 
-            mdatad_0 <= mdata_0;
-            mdata_1 <= mdata_1;
+            udatad_0 <= udata_0;
+            udatad_1 <= udata_1;
 
             -- Check if data valid
             if ycont(0) = '1' or xcont(0) = '1' then
@@ -111,21 +112,21 @@ begin
 
             -- RGB calculation
             if ycont(0) = '1' and xcont(0) = '0' then
-                mR <= mdata_0;
-                mG <= mdatad_0 + mdata_1;
-                mB <= mdatad_1;
+                uR <= udata_0;
+                uG <= udatad_0 + udata_1;
+                uB <= udatad_1;
             elsif ycont(0) = '1' and xcont(0) = '1' then
-                mR <= mdatad_0;
-                mG <= mdata_0 + mdatad_1;
-                mB <= mdata_1;
+                uR <= udatad_0;
+                uG <= udata_0 + udatad_1;
+                uB <= udata_1;
             elsif ycont(0) = '0' and xcont(0) = '0' then
-                mR <= mdata_1;
-                mG <= mdata_0 + mdatad_1;
-                mB <= mdatad_0;
+                uR <= udata_1;
+                uG <= udata_0 + udatad_1;
+                uB <= udatad_0;
             elsif ycont(0) = '0' and xcont(0) = '1' then
-                mR <= mdatad_1;
-                mG <= mdatad_0 + mdata_1;
-                mB <= mdata_0;
+                uR <= udatad_1;
+                uG <= udatad_0 + udata_1;
+                uB <= udata_0;
             end if;
         end if;
     end process;
