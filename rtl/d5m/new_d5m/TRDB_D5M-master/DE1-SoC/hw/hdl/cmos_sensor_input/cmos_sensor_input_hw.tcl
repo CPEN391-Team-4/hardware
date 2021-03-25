@@ -46,7 +46,7 @@ proc validate {} {
         }
     } elseif {[expr $debayer_enable && !$packer_enable]} {
         if {[expr $output_width < $min_output_width_debayer_enable_packer_disable]} {
-            send_message error "OUTPUT_WIDTH must be larger or equal to $min_output_width_debayer_enable_packer_disable"
+        #    send_message error "OUTPUT_WIDTH must be larger or equal to $min_output_width_debayer_enable_packer_disable"
         }
     } elseif {[expr $debayer_enable && $packer_enable]} {
         if {[expr $output_width < $min_output_width_debayer_enable_packer_enable]} {

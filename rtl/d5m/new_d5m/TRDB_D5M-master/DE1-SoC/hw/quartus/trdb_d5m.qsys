@@ -130,7 +130,7 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="CLK_IN_CLOCK_FREQUENCY" value="10000000" />
   <parameter name="CLK_OUT_CLOCK_FREQUENCY" value="50000000" />
-  <parameter name="CMOS_SENSOR_INPUT_DEBAYER_ENABLE" value="false" />
+  <parameter name="CMOS_SENSOR_INPUT_DEBAYER_ENABLE" value="true" />
   <parameter name="CMOS_SENSOR_INPUT_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="CMOS_SENSOR_INPUT_FIFO_DEPTH" value="32" />
   <parameter name="CMOS_SENSOR_INPUT_MAX_HEIGHT" value="1944" />

@@ -56,7 +56,7 @@ begin
                 taps1x => mdata_0
             );
 
-	 lumen <= uR + uB + uG(PIX_DEPTH_RAW downto 1);
+	 lumen <= resize(uR, 14) + uB + uG(PIX_DEPTH_RAW downto 1);
     data_out <= std_logic_vector(lumen(PIX_DEPTH_RAW + 1 downto PIX_DEPTH_RAW - PIX_DEPTH_RGB + 2));
     end_of_frame_out <= end_of_frame_in;    -- Check if this works correctly
 	 udata_0 <= unsigned(mdata_0);
