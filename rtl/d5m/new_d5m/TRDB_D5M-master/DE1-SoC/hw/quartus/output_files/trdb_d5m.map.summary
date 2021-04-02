@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Thu Mar 25 16:21:55 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : trdb_d5m
+Top-level Entity Name : DE1_SoC_TRDB_D5M_top_level
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 2705
+Total pins : 61
+Total virtual pins : 0
+Total block memory bits : 45,696
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1
+Total DLLs : 0

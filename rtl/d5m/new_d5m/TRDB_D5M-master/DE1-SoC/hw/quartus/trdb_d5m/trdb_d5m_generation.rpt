@@ -1,0 +1,121 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "C:\Users\mudit\Google Drive\UBC\20W\Term 2\cpen_391\Project\hardware\rtl\d5m\new_d5m\TRDB_D5M-master\DE1-SoC\hw\quartus\trdb_d5m.qsys" --block-symbol-file --output-directory="C:\Users\mudit\Google Drive\UBC\20W\Term 2\cpen_391\Project\hardware\rtl\d5m\new_d5m\TRDB_D5M-master\DE1-SoC\hw\quartus\trdb_d5m" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading quartus/trdb_d5m.qsys
+Progress: Reading input file
+Progress: Adding cmos_sensor_acquisition_0 [cmos_sensor_acquisition 15.1]
+Progress: Parameterizing module cmos_sensor_acquisition_0
+Progress: Adding i2c_0 [i2c 15.1]
+Progress: Parameterizing module i2c_0
+Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.1]
+Progress: Parameterizing module mm_bridge_0
+Progress: Adding sysclk [clock_source 18.1]
+Progress: Parameterizing module sysclk
+Progress: Adding trdb_d5m_pixclk [clock_source 18.1]
+Progress: Parameterizing module trdb_d5m_pixclk
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component clock_source version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component clock_source version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component altera_avalon_dc_fifo version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component altera_avalon_mm_bridge version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component altera_msgdma version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Info: trdb_d5m.cmos_sensor_acquisition_0.msgdma_0: Response information port is disabled. Enable the response port if data transfer information is required by host
+Info: trdb_d5m.cmos_sensor_acquisition_0.cmos_sensor_input_0.avalon_streaming_source/dc_fifo_0.in: Ready latency is 1 for source and 0 for sink. Avalon-ST Adapter will be inserted..
+Info: trdb_d5m.cmos_sensor_acquisition_0.cmos_sensor_input_0.avalon_streaming_source/dc_fifo_0.in: The source data signal is 16 bits, but the sink is 32 bits. Avalon-ST Adapter will be inserted.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\mudit\Google Drive\UBC\20W\Term 2\cpen_391\Project\hardware\rtl\d5m\new_d5m\TRDB_D5M-master\DE1-SoC\hw\quartus\trdb_d5m.qsys" --synthesis=VHDL --output-directory="C:\Users\mudit\Google Drive\UBC\20W\Term 2\cpen_391\Project\hardware\rtl\d5m\new_d5m\TRDB_D5M-master\DE1-SoC\hw\quartus\trdb_d5m\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading quartus/trdb_d5m.qsys
+Progress: Reading input file
+Progress: Adding cmos_sensor_acquisition_0 [cmos_sensor_acquisition 15.1]
+Progress: Parameterizing module cmos_sensor_acquisition_0
+Progress: Adding i2c_0 [i2c 15.1]
+Progress: Parameterizing module i2c_0
+Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.1]
+Progress: Parameterizing module mm_bridge_0
+Progress: Adding sysclk [clock_source 18.1]
+Progress: Parameterizing module sysclk
+Progress: Adding trdb_d5m_pixclk [clock_source 18.1]
+Progress: Parameterizing module trdb_d5m_pixclk
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component clock_source version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component clock_source version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component altera_avalon_dc_fifo version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component altera_avalon_mm_bridge version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Warning: trdb_d5m.cmos_sensor_acquisition_0: add_instance: Component altera_msgdma version 15.1 is not installed - loaded latest installed version 18.1 instead.  Please check for parameter mismatches 
+Info: trdb_d5m.cmos_sensor_acquisition_0.msgdma_0: Response information port is disabled. Enable the response port if data transfer information is required by host
+Info: trdb_d5m.cmos_sensor_acquisition_0.cmos_sensor_input_0.avalon_streaming_source/dc_fifo_0.in: Ready latency is 1 for source and 0 for sink. Avalon-ST Adapter will be inserted..
+Info: trdb_d5m.cmos_sensor_acquisition_0.cmos_sensor_input_0.avalon_streaming_source/dc_fifo_0.in: The source data signal is 16 bits, but the sink is 32 bits. Avalon-ST Adapter will be inserted.
+Info: trdb_d5m: Generating trdb_d5m "trdb_d5m" for QUARTUS_SYNTH
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Info: avalon_st_adapter: Inserting data_format_adapter: data_format_adapter_0
+Info: avalon_st_adapter: Inserting timing_adapter: timing_adapter_0
+Info: cmos_sensor_acquisition_0: "trdb_d5m" instantiated cmos_sensor_acquisition "cmos_sensor_acquisition_0"
+Info: i2c_0: "trdb_d5m" instantiated i2c "i2c_0"
+Info: mm_bridge_0: "trdb_d5m" instantiated altera_avalon_mm_bridge "mm_bridge_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "trdb_d5m" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "trdb_d5m" instantiated altera_reset_controller "rst_controller"
+Info: cmos_sensor_input_0: "cmos_sensor_acquisition_0" instantiated cmos_sensor_input "cmos_sensor_input_0"
+Info: dc_fifo_0: "cmos_sensor_acquisition_0" instantiated altera_avalon_dc_fifo "dc_fifo_0"
+Info: msgdma_0: "cmos_sensor_acquisition_0" instantiated altera_msgdma "msgdma_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "cmos_sensor_acquisition_0" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: "cmos_sensor_acquisition_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: mm_bridge_0_m0_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "mm_bridge_0_m0_translator"
+Info: cmos_sensor_acquisition_0_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "cmos_sensor_acquisition_0_avalon_slave_translator"
+Info: mm_bridge_0_m0_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "mm_bridge_0_m0_agent"
+Info: cmos_sensor_acquisition_0_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "cmos_sensor_acquisition_0_avalon_slave_agent"
+Info: cmos_sensor_acquisition_0_avalon_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "cmos_sensor_acquisition_0_avalon_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: mm_bridge_0_m0_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "mm_bridge_0_m0_limiter"
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: i2c_0_avalon_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "i2c_0_avalon_slave_burst_adapter"
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: i2c_0_avalon_slave_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "i2c_0_avalon_slave_rsp_width_adapter"
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: dispatcher_internal: "msgdma_0" instantiated modular_sgdma_dispatcher "dispatcher_internal"
+Info: write_mstr_internal: "msgdma_0" instantiated dma_write_master "write_mstr_internal"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/Users/mudit/Google Drive/UBC/20W/Term 2/cpen_391/Project/hardware/rtl/d5m/new_d5m/TRDB_D5M-master/DE1-SoC/hw/quartus/trdb_d5m/synthesis/submodules/altera_std_synchronizer_nocut.v
+Info: avalon_st_adapter_002: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_002"
+Info: data_format_adapter_0: "avalon_st_adapter" instantiated data_format_adapter "data_format_adapter_0"
+Info: timing_adapter_0: "avalon_st_adapter" instantiated timing_adapter "timing_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_002" instantiated error_adapter "error_adapter_0"
+Info: trdb_d5m: Done "trdb_d5m" with 45 modules, 86 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

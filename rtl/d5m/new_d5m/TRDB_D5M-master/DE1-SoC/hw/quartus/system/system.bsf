@@ -1,0 +1,213 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 464 480)
+	(text "system" (rect 211 -1 241 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 464 20 476)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 192 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 82 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 192 112)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "trdb_d5m_cmos_sensor_frame_valid" (rect 0 0 154 12)(font "Arial" (font_size 8)))
+		(text "trdb_d5m_cmos_sensor_frame_valid" (rect 4 309 196 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 192 320)(line_width 1))
+	)
+	(port
+		(pt 0 336)
+		(input)
+		(text "trdb_d5m_cmos_sensor_line_valid" (rect 0 0 141 12)(font "Arial" (font_size 8)))
+		(text "trdb_d5m_cmos_sensor_line_valid" (rect 4 325 190 336)(font "Arial" (font_size 8)))
+		(line (pt 0 336)(pt 192 336)(line_width 1))
+	)
+	(port
+		(pt 0 352)
+		(input)
+		(text "trdb_d5m_cmos_sensor_data[11..0]" (rect 0 0 145 12)(font "Arial" (font_size 8)))
+		(text "trdb_d5m_cmos_sensor_data[11..0]" (rect 4 341 196 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 192 352)(line_width 3))
+	)
+	(port
+		(pt 0 448)
+		(input)
+		(text "trdb_d5m_pixclk_clk" (rect 0 0 82 12)(font "Arial" (font_size 8)))
+		(text "trdb_d5m_pixclk_clk" (rect 4 437 118 448)(font "Arial" (font_size 8)))
+		(line (pt 0 448)(pt 192 448)(line_width 1))
+	)
+	(port
+		(pt 464 72)
+		(output)
+		(text "sdram_clk_clk" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "sdram_clk_clk" (rect 392 61 470 72)(font "Arial" (font_size 8)))
+		(line (pt 464 72)(pt 272 72)(line_width 1))
+	)
+	(port
+		(pt 0 152)
+		(output)
+		(text "sdram_controller_addr[12..0]" (rect 0 0 114 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_addr[12..0]" (rect 4 141 172 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 192 152)(line_width 3))
+	)
+	(port
+		(pt 0 168)
+		(output)
+		(text "sdram_controller_ba[1..0]" (rect 0 0 101 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_ba[1..0]" (rect 4 157 154 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 192 168)(line_width 3))
+	)
+	(port
+		(pt 0 184)
+		(output)
+		(text "sdram_controller_cas_n" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_cas_n" (rect 4 173 136 184)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 192 184)(line_width 1))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "sdram_controller_cke" (rect 0 0 87 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_cke" (rect 4 189 124 200)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 192 200)(line_width 1))
+	)
+	(port
+		(pt 0 216)
+		(output)
+		(text "sdram_controller_cs_n" (rect 0 0 93 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_cs_n" (rect 4 205 130 216)(font "Arial" (font_size 8)))
+		(line (pt 0 216)(pt 192 216)(line_width 1))
+	)
+	(port
+		(pt 0 248)
+		(output)
+		(text "sdram_controller_dqm[1..0]" (rect 0 0 109 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_dqm[1..0]" (rect 4 237 160 248)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 192 248)(line_width 3))
+	)
+	(port
+		(pt 0 264)
+		(output)
+		(text "sdram_controller_ras_n" (rect 0 0 96 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_ras_n" (rect 4 253 136 264)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 192 264)(line_width 1))
+	)
+	(port
+		(pt 0 280)
+		(output)
+		(text "sdram_controller_we_n" (rect 0 0 94 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_we_n" (rect 4 269 130 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 192 280)(line_width 1))
+	)
+	(port
+		(pt 464 112)
+		(output)
+		(text "trdb_d5m_xclkin_clk" (rect 0 0 82 12)(font "Arial" (font_size 8)))
+		(text "trdb_d5m_xclkin_clk" (rect 362 101 476 112)(font "Arial" (font_size 8)))
+		(line (pt 464 112)(pt 272 112)(line_width 1))
+	)
+	(port
+		(pt 0 232)
+		(bidir)
+		(text "sdram_controller_dq[15..0]" (rect 0 0 106 12)(font "Arial" (font_size 8)))
+		(text "sdram_controller_dq[15..0]" (rect 4 221 160 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 192 232)(line_width 3))
+	)
+	(port
+		(pt 0 392)
+		(bidir)
+		(text "trdb_d5m_i2c_scl" (rect 0 0 71 12)(font "Arial" (font_size 8)))
+		(text "trdb_d5m_i2c_scl" (rect 4 381 100 392)(font "Arial" (font_size 8)))
+		(line (pt 0 392)(pt 192 392)(line_width 1))
+	)
+	(port
+		(pt 0 408)
+		(bidir)
+		(text "trdb_d5m_i2c_sda" (rect 0 0 75 12)(font "Arial" (font_size 8)))
+		(text "trdb_d5m_i2c_sda" (rect 4 397 100 408)(font "Arial" (font_size 8)))
+		(line (pt 0 408)(pt 192 408)(line_width 1))
+	)
+	(drawing
+		(text "clk" (rect 177 43 372 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 197 67 412 144)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 163 83 356 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 197 107 436 224)(font "Arial" (color 0 0 0)))
+		(text "sdram_clk" (rect 273 43 600 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 257 67 532 144)(font "Arial" (color 0 0 0)))
+		(text "sdram_controller" (rect 94 123 284 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "addr" (rect 197 147 418 304)(font "Arial" (color 0 0 0)))
+		(text "ba" (rect 197 163 406 336)(font "Arial" (color 0 0 0)))
+		(text "cas_n" (rect 197 179 424 368)(font "Arial" (color 0 0 0)))
+		(text "cke" (rect 197 195 412 400)(font "Arial" (color 0 0 0)))
+		(text "cs_n" (rect 197 211 418 432)(font "Arial" (color 0 0 0)))
+		(text "dq" (rect 197 227 406 464)(font "Arial" (color 0 0 0)))
+		(text "dqm" (rect 197 243 412 496)(font "Arial" (color 0 0 0)))
+		(text "ras_n" (rect 197 259 424 528)(font "Arial" (color 0 0 0)))
+		(text "we_n" (rect 197 275 418 560)(font "Arial" (color 0 0 0)))
+		(text "trdb_d5m_cmos_sensor" (rect 50 291 220 595)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "frame_valid" (rect 197 315 460 640)(font "Arial" (color 0 0 0)))
+		(text "line_valid" (rect 197 331 454 672)(font "Arial" (color 0 0 0)))
+		(text "data" (rect 197 347 418 704)(font "Arial" (color 0 0 0)))
+		(text "trdb_d5m_i2c" (rect 113 363 298 739)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "scl" (rect 197 387 412 784)(font "Arial" (color 0 0 0)))
+		(text "sda" (rect 197 403 412 816)(font "Arial" (color 0 0 0)))
+		(text "trdb_d5m_pixclk" (rect 97 419 284 851)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 197 443 412 896)(font "Arial" (color 0 0 0)))
+		(text "trdb_d5m_xclkin" (rect 273 83 636 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 257 107 532 224)(font "Arial" (color 0 0 0)))
+		(text " system " (rect 429 464 906 938)(font "Arial" ))
+		(line (pt 192 32)(pt 272 32)(line_width 1))
+		(line (pt 272 32)(pt 272 464)(line_width 1))
+		(line (pt 192 464)(pt 272 464)(line_width 1))
+		(line (pt 192 32)(pt 192 464)(line_width 1))
+		(line (pt 193 52)(pt 193 76)(line_width 1))
+		(line (pt 194 52)(pt 194 76)(line_width 1))
+		(line (pt 193 92)(pt 193 116)(line_width 1))
+		(line (pt 194 92)(pt 194 116)(line_width 1))
+		(line (pt 271 52)(pt 271 76)(line_width 1))
+		(line (pt 270 52)(pt 270 76)(line_width 1))
+		(line (pt 193 132)(pt 193 284)(line_width 1))
+		(line (pt 194 132)(pt 194 284)(line_width 1))
+		(line (pt 193 300)(pt 193 356)(line_width 1))
+		(line (pt 194 300)(pt 194 356)(line_width 1))
+		(line (pt 193 372)(pt 193 412)(line_width 1))
+		(line (pt 194 372)(pt 194 412)(line_width 1))
+		(line (pt 193 428)(pt 193 452)(line_width 1))
+		(line (pt 194 428)(pt 194 452)(line_width 1))
+		(line (pt 271 92)(pt 271 116)(line_width 1))
+		(line (pt 270 92)(pt 270 116)(line_width 1))
+		(line (pt 0 0)(pt 464 0)(line_width 1))
+		(line (pt 464 0)(pt 464 480)(line_width 1))
+		(line (pt 0 480)(pt 464 480)(line_width 1))
+		(line (pt 0 0)(pt 0 480)(line_width 1))
+	)
+)

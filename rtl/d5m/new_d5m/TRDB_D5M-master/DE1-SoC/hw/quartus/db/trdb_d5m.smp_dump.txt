@@ -1,0 +1,108 @@
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:sdram_controller_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_trdb_d5m_0:trdb_d5m_0|i2c_interface:i2c_0|i2c_core:core|p_state
+Name p_state.s_WrAck_D p_state.s_WrAck_C p_state.s_WrAck_B p_state.s_WrAck_A p_state.s_Wr_E p_state.s_Wr_D p_state.s_Wr_C p_state.s_Wr_B p_state.s_Wr_A p_state.s_RdAck_E p_state.s_RdAck_D p_state.s_RdAck_C p_state.s_RdAck_B p_state.s_RdAck_A p_state.s_Rd_F p_state.s_Rd_E p_state.s_Rd_D p_state.s_Rd_C p_state.s_Rd_B p_state.s_Rd_A p_state.s_Stop_C p_state.s_Stop_B p_state.s_Stop_A p_state.s_Start_D p_state.s_Start_C p_state.s_Start_B p_state.s_Start_A p_state.s_DoneAck p_state.s_Done p_state.s_Idle p_state.s_Reset 
+p_state.s_Reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+p_state.s_Idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+p_state.s_Done 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+p_state.s_DoneAck 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+p_state.s_Start_A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+p_state.s_Start_B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+p_state.s_Start_C 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+p_state.s_Start_D 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+p_state.s_Stop_A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+p_state.s_Stop_B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+p_state.s_Stop_C 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Rd_A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Rd_B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Rd_C 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Rd_D 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Rd_E 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Rd_F 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_RdAck_A 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_RdAck_B 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_RdAck_C 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_RdAck_D 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_RdAck_E 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Wr_A 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Wr_B 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Wr_C 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Wr_D 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_Wr_E 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_WrAck_A 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_WrAck_B 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_WrAck_C 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+p_state.s_WrAck_D 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_trdb_d5m_0:trdb_d5m_0|system_trdb_d5m_0_cmos_sensor_acquisition_0:cmos_sensor_acquisition_0|cmos_sensor_input:cmos_sensor_input_0|cmos_sensor_input_avalon_st_source:cmos_sensor_input_avalon_st_source_inst|reg_state
+Name reg_state.STATE_WAIT_END_OF_FRAME_ACK reg_state.STATE_READY_CYCLE reg_state.STATE_IDLE 
+reg_state.STATE_IDLE 0 0 0 
+reg_state.STATE_READY_CYCLE 0 1 1 
+reg_state.STATE_WAIT_END_OF_FRAME_ACK 1 0 1 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_trdb_d5m_0:trdb_d5m_0|system_trdb_d5m_0_cmos_sensor_acquisition_0:cmos_sensor_acquisition_0|cmos_sensor_input:cmos_sensor_input_0|cmos_sensor_input_sampler:cmos_sensor_input_sampler_inst|reg_state
+Name reg_state.STATE_WAIT_IRQ_ACK reg_state.STATE_END_OF_FRAME_IN_ACK reg_state.STATE_WAIT_END_OF_FRAME_IN reg_state.STATE_END_OF_FRAME_OUT reg_state.STATE_LINE_LINE_BLANK_SNPSHT reg_state.STATE_DATA_VALID reg_state.STATE_START_OF_FRAME_OUT reg_state.STATE_WAIT_START_FRAME_SNPSHT reg_state.STATE_WAIT_END_FRAME_SNPSHT reg_state.STATE_LINE_LINE_BLANK_OR_LINE_FRAME_BLANK_GFI reg_state.STATE_DATA_SKIP reg_state.STATE_WAIT_START_FRAME_GFI reg_state.STATE_WAIT_END_FRAME_GFI reg_state.STATE_IDLE 
+reg_state.STATE_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+reg_state.STATE_WAIT_END_FRAME_GFI 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+reg_state.STATE_WAIT_START_FRAME_GFI 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+reg_state.STATE_DATA_SKIP 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+reg_state.STATE_LINE_LINE_BLANK_OR_LINE_FRAME_BLANK_GFI 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+reg_state.STATE_WAIT_END_FRAME_SNPSHT 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+reg_state.STATE_WAIT_START_FRAME_SNPSHT 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+reg_state.STATE_START_OF_FRAME_OUT 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+reg_state.STATE_DATA_VALID 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+reg_state.STATE_LINE_LINE_BLANK_SNPSHT 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+reg_state.STATE_END_OF_FRAME_OUT 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+reg_state.STATE_WAIT_END_OF_FRAME_IN 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+reg_state.STATE_END_OF_FRAME_IN_ACK 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+reg_state.STATE_WAIT_IRQ_ACK 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_sdram_controller_0:sdram_controller_0|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_sdram_controller_0:sdram_controller_0|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_sdram_controller_0:sdram_controller_0|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_sdram_controller_0:sdram_controller_0|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |DE1_SoC_TRDB_D5M_top_level|system:system_inst|system_nios2_gen2_0:nios2_gen2_0|system_nios2_gen2_0_cpu:cpu|system_nios2_gen2_0_cpu_nios2_oci:the_system_nios2_gen2_0_cpu_nios2_oci|system_nios2_gen2_0_cpu_debug_slave_wrapper:the_system_nios2_gen2_0_cpu_debug_slave_wrapper|system_nios2_gen2_0_cpu_debug_slave_tck:the_system_nios2_gen2_0_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

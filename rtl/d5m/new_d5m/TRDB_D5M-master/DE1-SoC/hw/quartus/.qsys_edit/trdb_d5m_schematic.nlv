@@ -1,0 +1,35 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.dc_fifo_0 -pg 1
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.msgdma_0.rst_inst -pg 1
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.msgdma_0.cb_inst -pg 1
+preplace inst trdb_d5m -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst trdb_d5m.sysclk -pg 1 -lvl 1 -y 170
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.clk_in -pg 1
+preplace inst trdb_d5m.trdb_d5m_pixclk -pg 1 -lvl 2 -y 70
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.clk_out -pg 1
+preplace inst trdb_d5m.i2c_0 -pg 1 -lvl 3 -y 260
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.cmos_sensor_input_0 -pg 1
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.msgdma_0.dispatcher_internal -pg 1
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.msgdma_0 -pg 1
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.msgdma_0.write_mstr_internal -pg 1
+preplace inst trdb_d5m.cmos_sensor_acquisition_0 -pg 1 -lvl 3 -y 50
+preplace inst trdb_d5m.mm_bridge_0 -pg 1 -lvl 2 -y 190
+preplace inst trdb_d5m.cmos_sensor_acquisition_0.mm_bridge_0 -pg 1
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)cmos_sensor_acquisition_0.cmos_sensor,(SLAVE)trdb_d5m.trdb_d5m_d) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)cmos_sensor_acquisition_0.cmos_sensor_input_irq,(SLAVE)trdb_d5m.cmos_sensor_acquisition_0_cmos_sensor_input_irq) 1 0 3 NJ 40 NJ 40 NJ
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)trdb_d5m.reset,(SLAVE)sysclk.clk_in_reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>trdb_d5m</net_container>(MASTER)trdb_d5m_pixclk.clk_reset,(SLAVE)cmos_sensor_acquisition_0.clk_in_reset) 1 2 1 N
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)trdb_d5m.i2c,(SLAVE)i2c_0.i2c) 1 0 3 NJ 330 NJ 330 NJ
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)trdb_d5m.clk_sys,(SLAVE)sysclk.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)cmos_sensor_acquisition_0.msgdma_csr_irq,(SLAVE)trdb_d5m.msgdma_csr_irq) 1 0 3 NJ 140 NJ 140 NJ
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)trdb_d5m.clk_trdb_d5m_pixclk,(SLAVE)trdb_d5m_pixclk.clk_in) 1 0 2 NJ 80 NJ
+preplace netloc FAN_OUT<net_container>trdb_d5m</net_container>(MASTER)sysclk.clk,(SLAVE)cmos_sensor_acquisition_0.clk_out_clk,(SLAVE)i2c_0.clock,(SLAVE)mm_bridge_0.clk) 1 1 2 430 180 690
+preplace netloc FAN_OUT<net_container>trdb_d5m</net_container>(MASTER)mm_bridge_0.m0,(SLAVE)i2c_0.avalon_slave,(SLAVE)cmos_sensor_acquisition_0.avalon_slave) 1 2 1 670
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)trdb_d5m.slave,(SLAVE)mm_bridge_0.s0) 1 0 2 NJ 240 NJ
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(SLAVE)i2c_0.interrupt_sender,(SLAVE)trdb_d5m.i2c_interrupt_sender) 1 0 3 NJ 310 NJ 310 NJ
+preplace netloc EXPORT<net_container>trdb_d5m</net_container>(MASTER)cmos_sensor_acquisition_0.avalon_master,(MASTER)trdb_d5m.master) 1 3 1 N
+preplace netloc FAN_OUT<net_container>trdb_d5m</net_container>(SLAVE)trdb_d5m_pixclk.clk_in_reset,(SLAVE)i2c_0.reset,(SLAVE)cmos_sensor_acquisition_0.clk_out_reset,(SLAVE)mm_bridge_0.reset,(MASTER)sysclk.clk_reset) 1 1 2 410 350 710
+preplace netloc POINT_TO_POINT<net_container>trdb_d5m</net_container>(SLAVE)cmos_sensor_acquisition_0.clk_in_clk,(MASTER)trdb_d5m_pixclk.clk) 1 2 1 N
+levelinfo -pg 1 0 200 1130
+levelinfo -hier trdb_d5m 210 240 480 900 1060
