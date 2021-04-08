@@ -102,6 +102,14 @@
          type = "int";
       }
    }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "1048704";
+         type = "String";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -793,7 +801,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="uart_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x00100080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
